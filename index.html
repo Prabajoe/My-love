@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Asma 💖 يا قمر</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#e8305a;--rose2:#ff6b8a;--rose3:#ff9ab5;
+  --gold:#d4a843;--goldi:#f0c96e;
+  --cream:#fff8f0;--deep:#0e050d;--mauve:#7a2d58;
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Cormorant Garamond',serif;background:var(--deep);color:var(--cream);overflow:hidden}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ===================== LOGIN ===================== */
+#login-screen{
+  position:fixed;inset:0;z-index:300;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:#06020e;
+  transition:opacity 1s,transform 1s,backdrop-filter 1s;
+}
+#login-screen.hide{opacity:0;transform:scale(1.1);pointer-events:none;backdrop-filter:blur(0px)}
+/* Add glowing orbs behind the login box */
+.login-orb-1, .login-orb-2 {
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  z-index:0;
+  animation:orbFloat 10s infinite alternate ease-in-out;
+}
+.login-orb-1 { width:300px; height:300px; background:rgba(232, 48, 90, 0.35); top:20%; left:20%; }
+.login-orb-2 { width:400px; height:400px; background:rgba(212, 168, 67, 0.25); bottom:15%; right:10%; animation-delay:-5s; }
+@keyframes orbFloat { 100% { transform:translate(50px, 50px) scale(1.2); } }
+
+#lstars{position:absolute;inset:0;z-index:1}
+.lstar{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite var(--dl,0s)}
+@keyframes twinkle{0%,100%{opacity:.1;transform:scale(1)}50%{opacity:1;transform:scale(1.5);box-shadow:0 0 10px #fff}}
+#lfloat{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.fh{position:absolute;pointer-events:none;animation:fha var(--d,9s) linear infinite var(--dl,0s);opacity:0;font-size:var(--s,1.1rem)}
+@keyframes fha{0%{transform:translateY(100vh);opacity:0}10%{opacity:.7}90%{opacity:.2}100%{transform:translateY(-15vh);opacity:0}}
+
+.login-box{
+  position:relative;z-index:10;width:min(440px,92vw);
+  background:linear-gradient(135deg, rgba(255,248,240,0.08) 0%, rgba(255,248,240,0.02) 100%);
+  border:1px solid rgba(212,168,67,.4);border-radius:32px;
+  padding:3rem 2rem;text-align:center;
+  backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.2);
+  animation:popin 1.2s cubic-bezier(.34,1.56,.64,1) both, floatLogin 6s ease-in-out infinite;
+}
+@keyframes floatLogin { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes popin{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:none}}
+.lmoon{font-size:4rem;display:block;animation:moonf 6s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(212,168,67,0.4));margin-bottom:0.5rem}
+@keyframes moonf{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-15px) rotate(8deg)}}
+.larabic{font-family:'Noto Naskh Arabic',serif;font-size:2.2rem;color:var(--goldi);text-shadow:0 0 35px rgba(212,168,67,.7);direction:rtl;margin-bottom:.2rem}
+.lname{font-family:'Dancing Script',cursive;font-size:3.5rem;color:#fff;text-shadow:0 0 50px rgba(232,48,90,.8);line-height:1;margin-bottom:.5rem}
+.lsub{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,248,240,.4);margin-bottom:2.5rem}
+.kchain{width:2px;height:40px;background:linear-gradient(rgba(212,168,67,.6),transparent);margin:0 auto}
+.kico{font-size:3.8rem;display:inline-block;animation:keyd 4s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(212,168,67,1));margin-bottom:1.5rem}
+@keyframes keyd{0%,100%{transform:rotate(-25deg)}50%{transform:rotate(25deg) translateY(-12px)}}
+.kinput{width:100%;background:rgba(14,5,13,0.6);border:2px solid rgba(212,168,67,.4);border-radius:50px;padding:1rem 1.5rem;color:var(--cream);font-family:inherit;font-size:1.2rem;text-align:center;outline:none;letter-spacing:.25em;transition:all .4s cubic-bezier(0.175,0.885,0.32,1.275);margin-bottom:.8rem;box-shadow:inset 0 4px 10px rgba(0,0,0,0.5)}
+.kinput:focus{border-color:var(--rose2);box-shadow:0 0 25px rgba(232,48,90,.4), inset 0 2px 5px rgba(0,0,0,0.5);transform:scale(1.02)}
+.kinput::placeholder{color:rgba(255,248,240,.25);letter-spacing:.1em}
+.obtn{width:100%;padding:1.1rem;border:1px solid rgba(255,255,255,0.2);border-radius:50px;background:linear-gradient(135deg,#e8305a,#a81f4a,#e8305a);background-size:200%;color:#fff;font-family:'Dancing Script',cursive;font-size:1.5rem;cursor:pointer;transition:all .4s cubic-bezier(0.175,0.885,0.32,1.275);box-shadow:0 8px 35px rgba(232,48,90,.6);animation:shimmer 3s linear infinite}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+.obtn:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 15px 50px rgba(232,48,90,.8);border-color:rgba(255,255,255,0.5)}
+.errmsg{color:#ff8aaa;font-size:.9rem;min-height:1.2rem;margin-top:.5rem;animation:shake 0.4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.lhint{font-size:.75rem;color:rgba(255,248,240,.3);font-style:italic;margin-top:1.2rem}
+
+/* ===================== APP CONTAINER ===================== */
+#app{display:none;position:fixed;inset:0;z-index:10;overflow:hidden}
+.page{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;opacity:0;pointer-events:none;transition:opacity .5s,transform .5s;transform:translateY(16px);padding-bottom:120px}
+.page.active{opacity:1;pointer-events:all;transform:none}
+
+/* ===================== BOTTOM NAV ===================== */
+#bnav{
+  position:fixed;bottom:16px;left:50%;transform:translateX(-50%);
+  width:min(460px,94vw);z-index:200;
+  background:rgba(18,5,24,0.88);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);
+  border:1px solid rgba(212,168,67,0.3);border-radius:24px;
+  display:flex;justify-content:space-around;padding:.6rem .4rem;
+  box-shadow:0 12px 45px rgba(0,0,0,0.75), inset 0 1px 2px rgba(255,255,255,0.12);
+}
+.ni{
+  display:flex;flex-direction:column;align-items:center;gap:.2rem;
+  background:none;border:none;color:rgba(255,248,240,0.45);
+  cursor:pointer;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding:.4rem .6rem;border-radius:16px;font-family:inherit;
+}
+.ni .ico{font-size:1.5rem;transition:transform 0.3s;filter:grayscale(0.2) opacity(0.75);}
+.ni .lbl{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+.ni.active{color:var(--rose2);background:rgba(232,48,90,0.12);}
+.ni.active .ico{
+  transform:scale(1.25) translateY(-5px);
+  filter:grayscale(0) drop-shadow(0 0 10px rgba(232,48,90,0.85)) opacity(1);
+}
+
+/* ===================== SHARED TEXT THEME ===================== */
+.pghdr{text-align:center;padding:1.5rem 1.5rem 0.2rem}
+.pgtitle{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,6.5vw,3.5rem);color:var(--goldi);text-shadow:0 2px 15px rgba(0,0,0,0.9), 0 0 25px rgba(212,168,67,.5)}
+.pgsub{font-style:italic;color:var(--rose2);font-size:1.05rem;margin-top:.2rem;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,0.9)}
+.pgdiv{text-align:center;margin:1rem auto 1.5rem;font-size:1.3rem;color:var(--rose2);text-shadow:0 0 10px rgba(232, 48, 90, 0.65);display:block}
+
+/* ===================== HOME PAGE ===================== */
+#page-home{
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;padding:1rem;
+}
+
+/* TRUE CSS DUAL IMAGE CURVED 3D HEART */
+.heart3d-scene{
+  width:270px;height:270px;
+  perspective:1200px;
+  margin:1rem 0;flex-shrink:0;
+  position:relative;
+}
+.heart3d-wrap{
+  width:100%;height:100%;
+  transform-style:preserve-3d;
+  position:relative;
+  transition:transform 0.1s ease-out;
+  cursor:grab;
+}
+.heart3d-wrap:active{cursor:grabbing}
+
+.heart-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(232, 48, 90, 0.45) 0%, rgba(232, 48, 90, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+.heart-floater {
+  width: 100%; height: 100%;
+  animation: floatHeart 4s ease-in-out infinite;
+}
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.h3d-side {
+  position:absolute;inset:0;
+  clip-path:url(#reversedHeartClip);-webkit-clip-path:url(#reversedHeartClip);
+  background-size:cover;background-position:center;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:1px solid rgba(212,168,67,0.45);
+}
+.h3d-side.front { transform:translateZ(14px); }
+.h3d-side.back { transform:translateZ(-14px) rotateY(180deg); }
+
+.h3d-mid {
+  position:absolute;inset:0;
+  clip-path:url(#reversedHeartClip);-webkit-clip-path:url(#reversedHeartClip);
+  background-size:cover;background-position:center;
+  filter:brightness(0.48);
+}
+
+.orbit-emoji{
+  position:absolute;font-size:1.4rem;
+  animation:orb var(--od,8s) linear infinite var(--odl,0s);
+  transform-origin:0 0;left:50%;top:50%;pointer-events:none;
+}
+@keyframes orb{
+  0%{transform:rotate(0deg) translateX(var(--or,145px)) rotate(0deg)}
+  100%{transform:rotate(360deg) translateX(var(--or,145px)) rotate(-360deg)}
+}
+.drag-hint{font-size:.7rem;color:var(--cream);font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:0.8rem;text-shadow:0 2px 8px #000;animation:dhp 2s ease-in-out infinite}
+
+.home-text{text-align:center;padding:0.5rem 1rem;width:100%;max-width:460px;background:rgba(14,5,13,0.65);border-radius:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.05);box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.home-name{font-family:'Dancing Script',cursive;font-size:clamp(3rem,10vw,4.8rem);color:var(--goldi);text-shadow:0 2px 10px #000, 0 0 30px rgba(212,168,67,0.6);line-height:1}
+.home-arabic{font-family:'Noto Naskh Arabic',serif;font-size:clamp(1.3rem,4.5vw,2rem);color:var(--rose2);direction:rtl;margin:.4rem 0;text-shadow:0 2px 8px #000}
+.home-poem{font-style:italic;font-size:1rem;line-height:1.8;color:var(--cream);font-weight:500;text-shadow:0 1px 6px #000;margin:.5rem auto}
+
+/* ===================== WISHES PAGE ===================== */
+.wishes-wrap{padding:0 1.2rem;max-width:960px;margin:0 auto}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.wcard{background:rgba(255,248,240,.04);border:1px solid rgba(212,168,67,.2);border-radius:22px;padding:1.8rem 1.5rem;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:all .4s ease}
+.wcard:hover{transform:translateY(-8px);border-color:var(--rose2);box-shadow:0 20px 45px rgba(232,48,90,.25)}
+.wemo{font-size:2.8rem;display:block;margin-bottom:.8rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.5))}
+.wcard h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--goldi);margin-bottom:.5rem;text-shadow:0 1px 4px #000}
+.wcard p{font-size:.98rem;line-height:1.7;color:rgba(255,248,240,.85);text-shadow:0 1px 3px #000}
+
+/* ===================== GALLERY PAGE ===================== */
+#page-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 1rem 0;
+}
+
+/* Asymmetrical box-type heart structural matrix container. */
+.box-heart-grid {
+  display: grid;
+  /* Modified first and last columns to 1.5fr to widen the end photo elements */
+  grid-template-columns: 1.5fr repeat(6, 1fr) 1.5fr;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 4px;
+  width: min(760px, 95vw);
+  aspect-ratio: 1.2; /* Slightly adjusted aspect ratio to safely house the stretched ends */
+  padding: 10px;
+  animation: popin 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1) both;
+}
+
+/* Custom architectural item positioning blocks */
+.box-tile {
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.box-tile:hover {
+  transform: scale(1.08);
+  filter: contrast(1.05) brightness(1.1);
+  z-index: 10;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+  border-color: var(--rose2);
+}
+
+/* Explicit mapping coordinates to construct the puzzle frame heart blueprint */
+.b-t-1 { grid-column: 2 / span 1; grid-row: 1 / span 1; }
+.b-t-2 { grid-column: 3 / span 1; grid-row: 1 / span 1; }
+.b-t-3 { grid-column: 6 / span 1; grid-row: 1 / span 1; }
+.b-t-4 { grid-column: 7 / span 1; grid-row: 1 / span 1; }
+
+.b-t-5 { grid-column: 1 / span 1; grid-row: 2 / span 2; } /* Expanded Left Shoulder */
+.b-t-6 { grid-column: 2 / span 2; grid-row: 2 / span 2; } 
+.b-t-7 { grid-column: 4 / span 1; grid-row: 2 / span 1; }
+.b-t-8 { grid-column: 5 / span 1; grid-row: 2 / span 1; }
+.b-t-9 { grid-column: 6 / span 2; grid-row: 2 / span 2; } 
+.b-t-10 { grid-column: 8 / span 1; grid-row: 2 / span 2; } /* Expanded Right Shoulder */
+
+.b-t-11 { grid-column: 4 / span 2; grid-row: 3 / span 3; } 
+
+.b-t-12 { grid-column: 1 / span 1; grid-row: 4 / span 1; } /* Expanded End Slot */
+.b-t-13 { grid-column: 2 / span 1; grid-row: 4 / span 1; }
+.b-t-14 { grid-column: 3 / span 1; grid-row: 4 / span 2; } 
+.b-t-15 { grid-column: 6 / span 1; grid-row: 4 / span 2; } 
+.b-t-16 { grid-column: 7 / span 1; grid-row: 4 / span 1; }
+.b-t-17 { grid-column: 8 / span 1; grid-row: 4 / span 1; } /* Expanded End Slot */
+
+.b-t-18 { grid-column: 1 / span 1; grid-row: 5 / span 1; } /* Expanded End Slot */
+.b-t-19 { grid-column: 2 / span 1; grid-row: 5 / span 1; }
+.b-t-20 { grid-column: 7 / span 1; grid-row: 5 / span 1; }
+
+.b-t-21 { grid-column: 2 / span 2; grid-row: 6 / span 1; } 
+.b-t-22 { grid-column: 4 / span 1; grid-row: 6 / span 1; }
+.b-t-23 { grid-column: 5 / span 1; grid-row: 6 / span 1; }
+.b-t-24 { grid-column: 6 / span 2; grid-row: 6 / span 1; } 
+
+.b-t-25 { grid-column: 4 / span 2; grid-row: 7 / span 1; } 
+
+/* Standalone typography footer indicator */
+.standalone-caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--goldi);
+  text-shadow: 0 2px 10px #000, 0 0 15px rgba(212,168,67,0.4);
+  margin-top: 1.5rem;
+  text-align: center;
+  line-height: 1.3;
+}
+.standalone-caption span {
+  display: block;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 0.95rem;
+  color: var(--rose2);
+  margin-top: 0.3rem;
+}
+
+/* ===================== NATURAL UNCLIPPED POPUP LIGHTBOX ===================== */
+#popup-overlay{
+  position:fixed;inset:0;z-index:500;background:rgba(5,1,10,.97);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(20px);
+}
+#popup-overlay.open{opacity:1;pointer-events:all}
+.popup-box{
+  position:relative;display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+  width:min(450px, 90vw);
+  animation: modalScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15) both;
+}
+@keyframes modalScale {
+  from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; }
+}
+
+.popup-normal-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.65);
+  border: 4px solid rgba(255,255,255,0.12);
+}
+.popup-close{
+  position:absolute;top:-18px;right:-18px;width:38px;height:38px;border-radius:50%;
+  background:var(--rose);border:none;color:#fff;font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;z-index:10;box-shadow: 0 4px 12px #000;
+}
+.popup-title{font-family:'Dancing Script',cursive;font-size:1.8rem;color:var(--goldi);text-align:center;text-shadow:0 2px 8px #000}
+
+/* ===================== LETTER PAGE & SCRATCH CARD ===================== */
+.letter-wrap{padding:0 1.2rem;max-width:640px;margin:0 auto}
+.scratch-container{
+  position:relative;
+  width:100%;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 15px 45px rgba(0,0,0,0.75);
+  max-height:480px;
+  transition:max-height 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.scratch-container.revealed{
+  max-height:5000px;
+}
+.lpaper{
+  background:rgba(18,6,15,0.78);
+  border:1px solid rgba(212,168,67,.3);
+  border-radius:24px;
+  padding:2.2rem 2rem;
+  backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);
+  position:relative;
+  z-index:1;
+  transition:opacity 0.8s ease;
+}
+.lpaper.hidden-content > *:not(#scratchCanvas):not(#scratchOverlay) {
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+.lgreet{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--rose2);text-shadow:0 1px 4px #000}
+.laname{font-family:'Noto Naskh Arabic',serif;font-size:1.3rem;color:var(--goldi);direction:rtl;text-align:center;margin:0.5rem 0 1.5rem;text-shadow:0 1px 5px #000}
+.lbody{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;line-height:2;color:rgba(255,248,240,.95);text-shadow:0 1px 4px #000}
+.lsig{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--rose2);text-align:right;margin-top:1.5rem;text-shadow:0 1px 4px #000}
+
+#scratchCanvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+  cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">🪙</text></svg>'), pointer;
+  transition:opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius:24px;
+}
+.scratch-overlay{
+  position:absolute;
+  inset:0;
+  z-index:12;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:opacity 0.5s ease-out;
+}
+.scratch-card-hint{
+  text-align:center;
+  background:rgba(14,5,13,0.85);
+  padding:1.4rem 2rem;
+  border-radius:20px;
+  border:1px solid rgba(212,168,67,0.45);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  animation:floatHint 3s ease-in-out infinite;
+  max-width:85%;
+}
+@keyframes floatHint{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.scratch-hand{
+  font-size:2.5rem;
+  margin-bottom:0.5rem;
+  animation:handRub 1.8s ease-in-out infinite;
+  display:inline-block;
+}
+@keyframes handRub{
+  0%,100%{transform:translate(0,0) rotate(0deg)}
+  25%{transform:translate(-15px,5px) rotate(-10deg)}
+  75%{transform:translate(15px,-5px) rotate(10deg)}
+}
+.scratch-text{
+  font-family:'Dancing Script',cursive;
+  font-size:1.3rem;
+  color:var(--goldi);
+  text-shadow:0 2px 4px rgba(0,0,0,0.8);
+  line-height:1.4;
+}
+
+/* ===================== CELEBRATE PAGE ===================== */
+.celwrap{padding:0 1.2rem;max-width:700px;margin:0 auto;text-align:center}
+.cake-big{font-size:5rem;display:inline-block;margin-bottom:.5rem;filter:drop-shadow(0 4px 10px #000)}
+.celname{font-family:'Dancing Script',cursive;font-size:clamp(2.5rem,8vw,4rem);color:var(--goldi);text-shadow:0 2px 10px #000}
+.celarabic{font-family:'Noto Naskh Arabic',serif;font-size:clamp(1.1rem,3.5vw,1.6rem);color:var(--rose2);direction:rtl;margin:.5rem 0 1.5rem;text-shadow:0 2px 8px #000}
+.cboxes{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;max-width:480px;margin:0 auto 1.5rem}
+.cbox{background:rgba(18,5,22,0.8);border:1px solid rgba(232,48,90,.3);border-radius:16px;padding:1.1rem .4rem;box-shadow:0 5px 15px #000}
+.cnum{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--rose2);display:block;text-shadow:0 1px 3px #000}
+.clbl{font-size:.6rem;color:rgba(255,248,240,0.5);font-weight:bold;text-transform:uppercase}
+.btnrow{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.cbtn{padding:.8rem 2rem;border-radius:50px;cursor:pointer;font-family:'Dancing Script',cursive;font-size:1.3rem;border:none;font-weight:bold;box-shadow:0 6px 20px rgba(0,0,0,0.4);transition:transform 0.2s;}
+.cbtn.gold{background:rgba(212,168,67,.25);border:1px solid rgba(212,168,67,.5);color:#fff;text-shadow:0 1px 4px #000}
+.cbtn.rosec{background:rgba(232,48,90,.25);border:1px solid rgba(232,48,90,.5);color:#fff;text-shadow:0 1px 4px #000}
+
+/* SCREEN INTERACTIVE FX ELEMENTS */
+.fw{position:fixed;pointer-events:none;z-index:999;animation:fwf 1.8s ease-out forwards;font-size:1.4rem}
+@keyframes fwf{0%{transform:translateY(0) scale(0);opacity:1}100%{transform:translateY(-260px) scale(2.2) rotate(360deg);opacity:0}}
+.hclick{position:fixed;pointer-events:none;z-index:998;animation:hcr 2.5s ease-out forwards}
+@keyframes hcr{0%{transform:translateY(0) scale(0);opacity:0}15%{opacity:1;transform:translateY(-40px) scale(1.3)}100%{transform:translateY(-280px) scale(0.5);opacity:0}}
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<svg style="position:absolute;width:0;height:0">
+  <defs>
+    <clipPath id="reversedHeartClip" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.98 C0.5,0.98 0.02,0.64 0.02,0.34 C0.02,0.15 0.17,0 0.36,0 C0.47,0 0.5,0.08 0.5,0.08 C0.5,0.08 0.53,0 0.64,0 C0.83,0 0.98,0.15 0.98,0.34 C0.98,0.64 0.5,0.98 0.5,0.98 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<div id="login-screen">
+  <div class="login-orb-1"></div>
+  <div class="login-orb-2"></div>
+  <div id="lstars"></div>
+  <div id="lfloat"></div>
+  <div class="login-box">
+    <span class="lmoon">🌙</span>
+    <div class="larabic">يا قمر</div>
+    <div class="lname">Asma</div>
+    <div class="lsub">unlock your birthday surprise ✨</div>
+    <div class="kchain"></div>
+    <span class="kico">🗝️</span>
+    <input class="kinput" type="password" id="keyInput" placeholder="enter our love key...">
+    <div class="errmsg" id="errMsg"></div>
+    <button class="obtn" onclick="tryUnlock()">💖 Open My Heart for Asma 💖</button>
+    <p class="lhint">Hint: type "iloveyou" ✨</p>
+  </div>
+</div>
+
+<div id="app">
+
+  <div class="page active" id="page-home">
+    <div class="pghdr">
+      <h2 class="pgtitle">Happy Birthday Asma</h2>
+      <p class="pgsub">يا قمر — My Moon, My Beautiful Soul</p>
+    </div>
+    
+    <div class="heart3d-scene" id="heartScene">
+      <div class="heart-glow"></div>
+      <div class="heart-floater">
+        <div class="heart3d-wrap" id="heart3dWrap">
+          <div class="h3d-side back" style="background-image:url('https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779120977/IMG_20240417_125558_142_tkpklj.jpg');"></div>
+          
+          <div class="h3d-side front" style="background-image:url('https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779121480/IZTH7738_vgdbbj.jpg');"></div>
+        </div>
+      </div>
+      <span class="orbit-emoji" style="--od:7s;--odl:0s;--or:150px">🌹</span>
+      <span class="orbit-emoji" style="--od:9s;--odl:-3s;--or:150px">✨</span>
+      <span class="orbit-emoji" style="--od:6s;--odl:-1.5s;--or:130px">💗</span>
+      <span class="orbit-emoji" style="--od:11s;--odl:-5s;--or:140px">🌸</span>
+    </div>
+    <p class="drag-hint">↺ drag left or right to spin the heart ↺</p>
+
+    <div class="home-text">
+      <h1 class="home-name">Asma</h1>
+      <div class="home-arabic">يا قمر ❤️ يا حياتي</div>
+      <p class="home-poem">
+        "You are the poem I never knew how to write, the song I always wanted to sing. Asma, يا قمر, my heart's only home."
+      </p>
+    </div>
+  </div>
+
+  <div class="page" id="page-wishes">
+    <div class="pghdr">
+      <h2 class="pgtitle">Birthday Wishes</h2>
+      <p class="pgsub">For the most beautiful soul — Asma يا قمر</p>
+    </div>
+    <div class="pgdiv">❧ ♡ ❧</div>
+    <div class="wishes-wrap">
+      <div class="wgrid">
+        <div class="wcard"><span class="wemo">🌹</span><h3>Eternal Rose</h3><p>🌹 Eternal Rose 🌹
+
+Every petal blooming today carries a soft whisper of my endless love for you, Asma. Among all the beautiful things in this world, you are the rarest and most precious to me.
+
+Like an eternal rose that never fades, my love for you will stay alive forever. ❤️
+</p></div>
+        <div class="wcard"><span class="wemo">🌙</span><h3>يا قمر — My Moon</h3><p>Just as the moon pours its silver light across the darkest skies, ya amar, your love brightens every hidden corner of my soul. You are the peace my heart searches for, the warmth behind my smiles, and the beautiful light that makes my world feel alive.
+
+No matter how dark life becomes, your presence will always be my brightest moonligh</p></div>
+        <div class="wcard"><span class="wemo">✨</span><h3>Endless Magic</h3><p>
+
+There is something about you that feels like pure magic, Asma. Every moment with you turns ordinary days into beautiful memories, and every smile of yours brings peace to my heart.
+
+No matter how much time passes, the love, warmth, and happiness you bring into my life will always feel endless  like a beautiful kind of magic that never fades. ❤️
+</p></div>
+        <div class="wcard"><span class="wemo">💖</span><h3>Heart's Sanctuary</h3><p>
+
+Wishing the happiest birthday to the girl who holds the keys to my heart and the peace of my soul. Your gentle spirit, beautiful presence, and pure love make my life feel complete in the most magical way.
+
+No matter where life takes us, my heart will always find its home in you. ❤️
+</p></div>
+        <div class="wcard"><span class="wemo">🌸</span><h3>Radiant Grace</h3><p>
+
+May the year ahead shine as beautifully as the grace and light you naturally carry within you. Your smile, your kindness, and your presence make the world around you feel brighter and more alive.
+
+You deserve endless peace, pure happiness, beautiful memories, and all the love and laughter the universe can offer. ❤️
+</p></div>
+        <div class="wcard"><span class="wemo">💫</span><h3>Written In Stars</h3><p>
+
+Our paths crossing was never just a coincidence it felt like something beautifully written in the stars long before we even met. You are my greatest blessing, my sweetest dream come true, Asma, and one of the most beautiful parts of my life.
+
+May this year bring peace to your heart, happiness to your soul, and may every silent prayer you carry within you be answered in the most beautiful way possible. ❤️
+</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-gallery">
+    <div class="pghdr">
+      <h2 class="pgtitle">Our Love Gallery</h2>
+      <p class="pgsub">أسماء — Structural Box Heart Blueprint</p>
+    </div>
+    
+    <div class="box-heart-grid" id="boxHeartGrid"></div>
+    
+    <div class="standalone-caption">
+      Love You to The Moon and Back
+      <span>For My Beautiful Asma • يا قمر</span>
+    </div>
+  </div>
+
+  <div class="page" id="page-letter">
+    <div class="pghdr">
+      <h2 class="pgtitle">A Letter From My Heart</h2>
+      <p class="pgsub">Written only for you, يا قمر</p>
+    </div>
+    <div class="pgdiv">❧ ♡ ❧</div>
+    <div class="letter-wrap">
+      <div class="scratch-container" id="scratchContainer">
+        <div class="lpaper hidden-content">
+          <div class="lgreet">My Dearest Asma,</div>
+          <div class="laname">يا قمر، يا حياتي، يا أغلى ما أملك</div>
+          <p class="lbody">
+            ✨🥂 Many more happy returns of the day, my dear LOVE 🌹🧁🥂
+I’m cheering for your 21st birthday and the beautiful life ahead of you 🌸
+
+The day you entered my life 14 January 2021  is still unforgettable to me. I still remember that random Instagram suggestion: from call_me_asuu to Fiza_asuu. For the first time in my life, I texted a stranger with just a simple “Hi”… and honestly, that one message changed my whole life forever. 
+
+You made me realize how love can completely change a man’s life. After that day, you became the only person I have ever loved this deeply. My feelings for you will never change  not even until my last breath, until my grave becomes my final bed on this earth. Even after I die, my love for you will stay alive forever. 
+
+
+You are someone truly special to me, and you will always have a special place in my heart and in my life. No one can ever take your place because what you mean to me is completely irreplaceable. The truth is… you are the one and only love of my life.
+
+
+
+Whatever happens in life, and no matter what situation comes, I will always stand behind you and support you in every situation. Whether I am near or far, I will always be there for you.
+
+Whether you stay with me or not, I will always stand for your happiness because I always want to see you smiling, happy, loved, and enjoying life with peace and fun.
+
+
+
+You are such a talented girl, shining like a star among n-number of people around you. No matter where you are, you always stand out from the crowd because there is something truly special about you.
+
+
+
+Only one thing I want to tell you always be bold enough to face every situation in life without fear. Stay strong, take care of your health, eat properly on time, and always keep that beautiful smile on your face 🤍 
+
+
+This is the first birthday wish I’m directly giving you in these 6 years. Every year on your birthday, we were either not talking, stuck in misunderstandings, ego issues, or problems between us… but this time, we are talking together in this God-blessed month of May. That itself feels special to me.
+
+
+
+Once again, many many more happy returns of the day (19/05/2026) 😘
+Asma 💕❣️
+Or according to me… ✨🌜 Ya Amar 💓🌕 of my life…
+
+The most valuable person in my life ❤️
+
+          </p>
+          <p class="lsig">Forever yours 💖</p>
+        </div>
+        <canvas id="scratchCanvas"></canvas>
+        <div class="scratch-overlay" id="scratchOverlay">
+          <div class="scratch-card-hint">
+            <span class="scratch-hand">👆</span>
+            <p class="scratch-text">Rub & scratch the card with love to reveal my message... ✨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-celebrate">
+    <div class="pghdr">
+      <h2 class="pgtitle">Celebrate! 🎉</h2>
+      <p class="pgsub">Today is all about you, Asma يا قمر</p>
+    </div>
+    <div class="pgdiv">❧ ♡ ❧</div>
+    <div class="celwrap">
+      <span class="cake-big">🎂</span>
+      <h2 class="celname">Happy Birthday Asma!</h2>
+      <div class="celarabic">كل عام وأنتِ بخير يا قمر 🌹</div>
+      <div class="cboxes" style="grid-template-columns:repeat(3,1fr); max-width:600px;">
+        <div class="cbox"><span class="cnum" id="daysLivedCounter">0</span><div class="clbl">Days on Earth</div></div>
+        <div class="cbox"><span class="cnum">21</span><div class="clbl">Beautiful Years</div></div>
+        <div class="cbox"><span class="cnum">∞</span><div class="clbl">My Love For You</div></div>
+      </div>
+      <div class="btnrow">
+        <button class="cbtn gold" onclick="bigFW()">🎆 Launch Fireworks</button>
+        <button class="cbtn rosec" onclick="rainH()">💕 Rain Hearts</button>
+      </div>
+    </div>
+  </div>
+
+  <nav id="bnav">
+    <button class="ni active" onclick="gp('home',this)"><span class="ico">💝</span><span class="lbl">Home</span></button>
+    <button class="ni" onclick="gp('wishes',this)"><span class="ico">💖</span><span class="lbl">Wishes</span></button>
+    <button class="ni" onclick="gp('gallery',this)"><span class="ico">📸</span><span class="lbl">Gallery</span></button>
+    <button class="ni" onclick="gp('letter',this)"><span class="ico">💌</span><span class="lbl">Letter</span></button>
+    <button class="ni" onclick="gp('celebrate',this)"><span class="ico">🎉</span><span class="lbl">Celebrate</span></button>
+  </nav>
+</div>
+
+<div id="popup-overlay" onclick="closePopup(event)">
+  <div class="popup-box" id="popupBox">
+    <button class="popup-close" onclick="closePopup(event)">✕</button>
+    <div class="popup-normal-photo" id="popup-normal-photo-layer"></div>
+    <div class="popup-title" id="popup-title">Memory Segment</div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   INTERACTIVE SCRATCH CARD GLOBAL STATE
+   ============================================================ */
+let scratchCanvas = null;
+let scratchCtx = null;
+let isScratching = false;
+let scratchRevealed = false;
+let scratchCheckTimeout = null;
+let sLastX = 0;
+let sLastY = 0;
+
+/* ============================================================
+   BACKGROUND ENGINE PARTICLES
+   ============================================================ */
+const bgCanvas = document.getElementById('bg-canvas');
+const bgCtx = bgCanvas.getContext('2d');
+let BW, BH, pts = [];
+function rsz() { 
+  BW = bgCanvas.width = innerWidth; 
+  BH = bgCanvas.height = innerHeight; 
+  if (typeof resizeScratchCanvas === 'function') resizeScratchCanvas();
+}
+rsz(); addEventListener('resize', rsz);
+function mkP() {
+  return { x: Math.random() * BW, y: BH + 10, vy: -(Math.random() * .5 + .2), vx: (Math.random() - .5) * .25, sz: Math.random() * 3 + 1, op: Math.random() * .35 + .05, c: ['#e8305a','#d4a843','#ff6b8a','#fff'][~~(Math.random() * 4)], h: Math.random() > 0.6 };
+}
+for (let i = 0; i < 40; i++) { let p = mkP(); p.y = Math.random() * BH; pts.push(p); }
+(function loop() {
+  bgCtx.clearRect(0, 0, BW, BH);
+  pts.forEach((p, i) => {
+    p.y += p.vy; p.x += p.vx + Math.sin(Date.now() * .001 + i) * .15;
+    if (p.y < -30) pts[i] = mkP();
+    bgCtx.globalAlpha = p.op; bgCtx.fillStyle = p.c;
+    if (p.h) { bgCtx.font = p.sz * 3 + 'px serif'; bgCtx.fillText('♥', p.x, p.y); }
+    else { bgCtx.beginPath(); bgCtx.arc(p.x, p.y, p.sz, 0, Math.PI * 2); bgCtx.fill(); }
+  });
+  bgCtx.globalAlpha = 1; requestAnimationFrame(loop);
+})();
+
+const ls = document.getElementById('lstars');
+for (let i = 0; i < 35; i++) {
+  const s = document.createElement('div'); s.className = 'lstar';
+  const sz = Math.random() * 2 + .5;
+  s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;position:absolute;--d:${Math.random()*3+2}s;--dl:${Math.random()*3}s`;
+  ls.appendChild(s);
+}
+
+/* ============================================================
+   BOX-TYPE ARCHITECTURAL GRID ENGINE (25 Tailored Photo Slots)
+   ============================================================ */
+function buildBoxHeartGallery() {
+  const gridContainer = document.getElementById('boxHeartGrid');
+  gridContainer.innerHTML = '';
+  
+  // 1. Put your 25 image URLs or local file paths here in order
+  const myPhotos = [
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779121922/GMBX8332_oh1no1.jpg", // Slot 1
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122794/1000006784_c0rnr0.jpg", // Slot 2
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122735/KZKA8592_yjnjbj.jpg", // Slot 3
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122653/DAKZ0119_hjrhug.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122601/VLGQ5977_agfk8d.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122550/CHFB5196_i39abn.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122518/1000000165_udsyfq.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122527/1000000173_vqrpt2.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122493/1000000144_jbhira.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122712/IMG_20240417_125603_077_qb14d7.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122558/BRHE1519_whbioy.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779121480/IZTH7738_vgdbbj.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122759/AGWN6912_ft0xuz.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122722/SGLC1659_aqkefa.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122566/1000006799_na1fmm.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122694/IMG_20240417_125546_867_aouvew.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122510/1000000164_lasrjp.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122485/1000000120_evfasj.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122743/IMG_20240417_125627_687_oyk5ng.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122537/1000004606_drjgfz.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122502/1000000152_gsyto0.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122783/SULC1499_kddqbo.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122626/IMG_20240414_121142_071_gas8cg.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779122612/UCHZ3301_i0iwcm.jpg",
+    "https://res.cloudinary.com/ds2mprbpz/image/upload/q_auto/f_auto/v1779125468/IMG_20240417_125608_207_nlw4gt.jpg"
+    // ... continue adding up to 25 paths/URLs
+  ];
+  
+  for (let i = 1; i <= 25; i++) {
+    const tile = document.createElement('div');
+    tile.className = `box-tile b-t-${i}`;
+    
+    // 2. Fallback to placeholder if you haven't filled out all 25 images yet
+    const imgUrl = myPhotos[i - 1] || `https://picsum.photos/500/500?random=${i + 40}`;
+    
+    tile.style.backgroundImage = `url('${imgUrl}')`;
+    
+    tile.addEventListener('click', () => {
+      openPopup({
+        img: imgUrl,
+        label: `Asma's Memory Chapter #${i}`
+      });
+    });
+    
+    gridContainer.appendChild(tile);
+  }
+}
+
+/* ============================================================
+   3D ROTATING DUAL-IMAGE HEART LOGIC
+   ============================================================ */
+const wrap = document.getElementById('heart3dWrap');
+const scene = document.getElementById('heartScene');
+let rotY = 0, isDragging = false, lastX = 0;
+
+function rotateHeart() {
+  if(!isDragging && wrap) {
+    rotY += 0.4;
+    wrap.style.transform = `rotateY(${rotY}deg)`;
+  }
+  requestAnimationFrame(rotateHeart);
+}
+requestAnimationFrame(rotateHeart);
+
+function startDrag(e) {
+  isDragging = true;
+  lastX = e.touches ? e.touches[0].clientX : e.clientX;
+}
+function moveDrag(e) {
+  if (!isDragging) return;
+  const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+  const deltaX = currentX - lastX;
+  rotY += deltaX * 0.7;
+  wrap.style.transform = `rotateY(${rotY}deg)`;
+  lastX = currentX;
+}
+function stopDrag() { isDragging = false; }
+
+scene.addEventListener('mousedown', startDrag);
+scene.addEventListener('touchstart', startDrag, { passive: true });
+window.addEventListener('mousemove', moveDrag);
+window.addEventListener('touchmove', moveDrag, { passive: true });
+window.addEventListener('mouseup', stopDrag);
+window.addEventListener('touchend', stopDrag);
+
+/* ============================================================
+   LIGHTBOX DISPLAY ENGINE (Unclipped Normal Dimensions Look)
+   ============================================================ */
+function openPopup(data) {
+  document.getElementById('popup-normal-photo-layer').style.backgroundImage = `url('${data.img}')`;
+  document.getElementById('popup-title').textContent = data.label;
+  document.getElementById('popup-overlay').classList.add('open');
+}
+function closePopup(e) {
+  if (e.target.id === 'popup-overlay' || e.target.classList.contains('popup-close')) {
+    document.getElementById('popup-overlay').classList.remove('open');
+  }
+}
+
+/* ============================================================
+   ROUTING ENGINE MANAGEMENT
+   ============================================================ */
+function tryUnlock() {
+  const v = document.getElementById('keyInput').value.toLowerCase().trim();
+  if (['iloveyou','love','mylove','asma','yamar'].includes(v)) {
+    document.getElementById('login-screen').classList.add('hide');
+    setTimeout(() => {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      buildBoxHeartGallery();
+      bigFW();
+    }, 1000);
+  } else {
+    document.getElementById('errMsg').textContent = '💔 Try again يا قمر...';
+  }
+}
+
+let curPage = 'home';
+function gp(name, btn) {
+  if (name === curPage) return;
+  document.getElementById('page-' + curPage).classList.remove('active');
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.ni').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  curPage = name;
+  if(name === 'gallery') buildBoxHeartGallery();
+  if(name === 'letter') initScratchCard();
+  
+  if(name === 'celebrate') {
+    animateCounter('daysLivedCounter', 0, 7670, 2000); // 19/05/2005 to 19/05/2026 exactly 7670 days!
+  }
+}
+
+function animateCounter(id, start, end, duration) {
+  const obj = document.getElementById(id);
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+/* ============================================================
+   INTERACTIVE SCRATCH-OFF CARD ENGINE
+   ============================================================ */
+
+function initScratchCard() {
+  scratchCanvas = document.getElementById('scratchCanvas');
+  if (!scratchCanvas || scratchRevealed) return;
+  
+  scratchCtx = scratchCanvas.getContext('2d', { willReadFrequently: true });
+  isScratching = false;
+  
+  // Set correct size
+  resizeScratchCanvas();
+  
+  // Remove existing listener references to avoid duplicates
+  scratchCanvas.replaceWith(scratchCanvas.cloneNode(true));
+  scratchCanvas = document.getElementById('scratchCanvas');
+  scratchCtx = scratchCanvas.getContext('2d', { willReadFrequently: true });
+  
+  // Register touch/mouse listeners
+  // Desktop Mouse Events
+  scratchCanvas.addEventListener('mousedown', (e) => {
+    isScratching = true;
+    const coords = getCoords(e);
+    sLastX = coords.x;
+    sLastY = coords.y;
+    scratch(coords.x, coords.y);
+  });
+  
+  scratchCanvas.addEventListener('mousemove', (e) => {
+    if (!isScratching) return;
+    const coords = getCoords(e);
+    scratch(coords.x, coords.y);
+    checkScratchProgress();
+  });
+  
+  window.addEventListener('mouseup', () => {
+    isScratching = false;
+  });
+  
+  scratchCanvas.addEventListener('mouseleave', () => {
+    isScratching = false;
+  });
+  
+  // Mobile Touch Events
+  scratchCanvas.addEventListener('touchstart', (e) => {
+    isScratching = true;
+    const coords = getCoords(e);
+    sLastX = coords.x;
+    sLastY = coords.y;
+    scratch(coords.x, coords.y);
+    e.preventDefault(); // Prevent scrolling while scratching
+  }, { passive: false });
+  
+  scratchCanvas.addEventListener('touchmove', (e) => {
+    if (!isScratching) return;
+    const coords = getCoords(e);
+    scratch(coords.x, coords.y);
+    checkScratchProgress();
+    e.preventDefault(); // Prevent scrolling while scratching
+  }, { passive: false });
+  
+  scratchCanvas.addEventListener('touchend', () => {
+    isScratching = false;
+  });
+}
+
+function resizeScratchCanvas() {
+  if (!scratchCanvas || scratchRevealed) return;
+  const container = document.getElementById('scratchContainer');
+  if (!container) return;
+  
+  scratchCanvas.width = container.offsetWidth;
+  scratchCanvas.height = container.offsetHeight;
+  
+  drawScratchCover();
+}
+
+function drawScratchCover() {
+  if (!scratchCtx || !scratchCanvas) return;
+  const w = scratchCanvas.width;
+  const h = scratchCanvas.height;
+  
+  scratchCtx.clearRect(0, 0, w, h);
+  
+  // 1. Create luxury deep-violet & rose gradient
+  const grad = scratchCtx.createRadialGradient(w/2, h/2, 20, w/2, h/2, Math.max(w, h)*0.7);
+  grad.addColorStop(0, '#e8305a');      // Rose Gold center
+  grad.addColorStop(0.3, '#7a2d58');    // Deep mauve
+  grad.addColorStop(0.7, '#1b061d');    // Celestial dark violet
+  grad.addColorStop(1, '#0e050d');      // Deepest universe
+  
+  scratchCtx.fillStyle = grad;
+  scratchCtx.fillRect(0, 0, w, h);
+  
+  // 2. Draw golden foil pattern / starry noise
+  scratchCtx.fillStyle = 'rgba(212, 168, 67, 0.45)';
+  for (let i = 0; i < 80; i++) {
+    const x = Math.random() * w;
+    const y = Math.random() * h;
+    const sz = Math.random() * 2 + 0.5;
+    scratchCtx.beginPath();
+    scratchCtx.arc(x, y, sz, 0, Math.PI * 2);
+    scratchCtx.fill();
+  }
+  
+  // Draw larger glowing starbursts
+  for (let i = 0; i < 8; i++) {
+    const x = Math.random() * (w - 100) + 50;
+    const y = Math.random() * (h - 100) + 50;
+    drawGoldenStar(scratchCtx, x, y, Math.random() * 8 + 6);
+  }
+  
+  // 3. Draw a gorgeous double gold border
+  scratchCtx.strokeStyle = 'rgba(212, 168, 67, 0.65)';
+  scratchCtx.lineWidth = 2;
+  scratchCtx.strokeRect(15, 15, w - 30, h - 30);
+  scratchCtx.strokeStyle = 'rgba(212, 168, 67, 0.35)';
+  scratchCtx.lineWidth = 1;
+  scratchCtx.strokeRect(20, 20, w - 40, h - 40);
+  
+  drawCornerDecor(scratchCtx, w, h);
+  
+  // 4. Draw Typography
+  scratchCtx.fillStyle = '#f0c96e'; // Goldi
+  scratchCtx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+  scratchCtx.shadowBlur = 10;
+  
+  scratchCtx.font = '28px "Noto Naskh Arabic", serif';
+  scratchCtx.textAlign = 'center';
+  scratchCtx.fillText('يا قمر 🌙', w / 2, h / 2 - 80);
+  
+  scratchCtx.font = 'bold 36px "Dancing Script", cursive';
+  scratchCtx.fillText('Secret Love Letter', w / 2, h / 2 - 20);
+  
+  scratchCtx.font = 'italic 16px "Cormorant Garamond", serif';
+  scratchCtx.fillStyle = 'rgba(255, 248, 240, 0.7)';
+  scratchCtx.fillText('A message written in the stars for you...', w / 2, h / 2 + 20);
+  
+  scratchCtx.font = 'bold 22px "Dancing Script", cursive';
+  scratchCtx.fillStyle = '#ff9ab5';
+  scratchCtx.fillText('♥ Rub to Reveal Heart ♥', w / 2, h / 2 + 70);
+  
+  scratchCtx.shadowBlur = 0;
+}
+
+function drawGoldenStar(ctx, cx, cy, r) {
+  ctx.save();
+  ctx.fillStyle = 'rgba(240, 201, 110, 0.85)';
+  ctx.shadowColor = '#d4a843';
+  ctx.shadowBlur = 8;
+  ctx.beginPath();
+  for (let i = 0; i < 4; i++) {
+    ctx.lineTo(cx + Math.cos(i * Math.PI / 2) * r, cy + Math.sin(i * Math.PI / 2) * r);
+    ctx.lineTo(cx + Math.cos(i * Math.PI / 2 + Math.PI / 4) * (r * 0.35), cy + Math.sin(i * Math.PI / 2 + Math.PI / 4) * (r * 0.35));
+  }
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawCornerDecor(ctx, w, h) {
+  ctx.strokeStyle = 'rgba(212, 168, 67, 0.8)';
+  ctx.lineWidth = 1.5;
+  const len = 25;
+  const padding = 15;
+  
+  // Top-left
+  ctx.beginPath();
+  ctx.moveTo(padding, padding + len);
+  ctx.lineTo(padding, padding);
+  ctx.lineTo(padding + len, padding);
+  ctx.stroke();
+  
+  // Top-right
+  ctx.beginPath();
+  ctx.moveTo(w - padding, padding + len);
+  ctx.lineTo(w - padding, padding);
+  ctx.lineTo(w - padding - len, padding);
+  ctx.stroke();
+  
+  // Bottom-left
+  ctx.beginPath();
+  ctx.moveTo(padding, h - padding - len);
+  ctx.lineTo(padding, h - padding);
+  ctx.lineTo(padding + len, h - padding);
+  ctx.stroke();
+  
+  // Bottom-right
+  ctx.beginPath();
+  ctx.moveTo(w - padding, h - padding - len);
+  ctx.lineTo(w - padding, h - padding);
+  ctx.lineTo(w - padding - len, h - padding);
+  ctx.stroke();
+}
+
+function getCoords(e) {
+  const rect = scratchCanvas.getBoundingClientRect();
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+  
+  return {
+    x: ((clientX - rect.left) / rect.width) * scratchCanvas.width,
+    y: ((clientY - rect.top) / rect.height) * scratchCanvas.height
+  };
+}
+
+function scratch(x, y) {
+  if (!scratchCtx) return;
+  scratchCtx.globalCompositeOperation = 'destination-out';
+  
+  scratchCtx.lineJoin = 'round';
+  scratchCtx.lineCap = 'round';
+  scratchCtx.lineWidth = 42; // Soft thick scratch brush
+  
+  scratchCtx.beginPath();
+  scratchCtx.moveTo(sLastX, sLastY);
+  scratchCtx.lineTo(x, y);
+  scratchCtx.stroke();
+  
+  sLastX = x;
+  sLastY = y;
+  
+  const overlay = document.getElementById('scratchOverlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    setTimeout(() => { if(overlay.parentNode) overlay.remove(); }, 500);
+  }
+}
+
+function checkScratchProgress() {
+  if (scratchRevealed || !scratchCanvas || !scratchCtx) return;
+  
+  if (scratchCheckTimeout) return;
+  scratchCheckTimeout = setTimeout(() => {
+    scratchCheckTimeout = null;
+  }, 120);
+  
+  const w = scratchCanvas.width;
+  const h = scratchCanvas.height;
+  const imgData = scratchCtx.getImageData(0, 0, w, h);
+  const pix = imgData.data;
+  const total = pix.length;
+  let transparent = 0;
+  
+  const step = 32 * 4; 
+  let sampledTotal = 0;
+  for (let i = 3; i < total; i += step) {
+    sampledTotal++;
+    if (pix[i] === 0) {
+      transparent++;
+    }
+  }
+  
+  const pct = (transparent / sampledTotal) * 100;
+  if (pct > 40) { // If 40% or more scratched, trigger complete reveal!
+    revealLetter();
+  }
+}
+
+function revealLetter() {
+  if (scratchRevealed) return;
+  scratchRevealed = true;
+  
+  scratchCanvas.style.transition = 'opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
+  scratchCanvas.style.opacity = '0';
+  scratchCanvas.style.transform = 'scale(1.05)';
+  scratchCanvas.style.pointerEvents = 'none';
+  
+  const container = document.getElementById('scratchContainer');
+  if (container) container.classList.add('revealed');
+  
+  const paper = document.querySelector('#page-letter .lpaper');
+  if (paper) paper.classList.remove('hidden-content');
+  
+  const overlay = document.getElementById('scratchOverlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    setTimeout(() => { if(overlay.parentNode) overlay.remove(); }, 500);
+  }
+  
+  setTimeout(() => {
+    if (scratchCanvas.parentNode) scratchCanvas.remove();
+    bigFW();
+    rainH();
+    
+    // Add extra celebration bursts
+    setTimeout(() => launchFW(8), 800);
+    setTimeout(() => launchFW(8), 1600);
+  }, 1000);
+}
+
+/* TOUCH ACCENT POP ENGINE */
+window.addEventListener('click', (e) => {
+  if (e.target.closest('#bnav') || e.target.closest('.obtn') || e.target.closest('.cbtn') || e.target.closest('.popup-close') || e.target.closest('.box-tile')) return;
+  
+  const heart = document.createElement('div');
+  heart.className = 'hclick';
+  heart.style.left = (e.clientX - 12) + 'px';
+  heart.style.top = (e.clientY - 12) + 'px';
+  heart.style.color = ['#e8305a', '#ff6b8a', '#ff9ab5', '#f0c96e'][~~(Math.random() * 4)];
+  heart.style.fontSize = (Math.random() * 0.5 + 1.2) + 'rem';
+  heart.textContent = ['♥', '💕', '💖', '🌸'][~~(Math.random() * 4)];
+  document.body.appendChild(heart);
+  
+  setTimeout(() => heart.remove(), 2400);
+});
+
+function launchFW(n) {
+  for (let i = 0; i < n; i++) {
+    const fw = document.createElement('div'); fw.className = 'fw';
+    fw.style.cssText = `left:${Math.random()*100}vw;top:${30+Math.random()*40}vh;`;
+    fw.textContent = ['🎆','✨','💥','💖','🌹'][~~(Math.random() * 5)];
+    document.body.appendChild(fw); setTimeout(() => fw.remove(), 1800);
+  }
+}
+function bigFW() { launchFW(16); }
+function rainH() {
+  for (let i = 0; i < 16; i++) {
+    const h = document.createElement('div'); h.className = 'hclick';
+    h.style.cssText = `left:${Math.random()*100}vw;top:${40+Math.random()*40}vh;font-size:1.6rem`;
+    h.textContent = '💖'; document.body.appendChild(h); setTimeout(() => h.remove(), 2500);
+  }
+}
+
+/* DYNAMIC DENSE VOLUMETRIC 3D HEART LAYERS */
+function build3DHeartLayers() {
+  const wrap = document.getElementById('heart3dWrap');
+  if (!wrap) return;
+  const front = wrap.querySelector('.h3d-side.front');
+  const back = wrap.querySelector('.h3d-side.back');
+  if (!front || !back) return;
+  
+  const frontBg = front.style.backgroundImage;
+  
+  wrap.innerHTML = '';
+  wrap.appendChild(back);
+  
+  // Densely layered intermediate slices for solid 3D depth profile
+  for (let z = -13; z <= 13; z += 1) {
+    if (z > -13 && z < 13) {
+      const mid = document.createElement('div');
+      mid.className = 'h3d-mid';
+      mid.style.transform = `translateZ(${z}px)`;
+      mid.style.backgroundImage = frontBg;
+      wrap.appendChild(mid);
+    }
+  }
+  wrap.appendChild(front);
+}
+build3DHeartLayers();
+</script>
+</body>
+</html>
